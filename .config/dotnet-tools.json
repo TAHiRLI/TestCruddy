@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "cruddy.cli": {
+      "version": "0.1.2",
+      "commands": [
+        "cruddy"
+      ],
+      "rollForward": false
+    }
+  }
+}

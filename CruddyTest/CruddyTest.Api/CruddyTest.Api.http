@@ -1,0 +1,6 @@
+@CruddyTest.Api_HostAddress = http://localhost:5259
+
+GET {{CruddyTest.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
