@@ -9,14 +9,15 @@ public class EmployeeCruddyConfig : CruddyEntityConfig<Employee>
     public EmployeeCruddyConfig()
     {
         ForEntity()
-            .HasRelation("Relation")
-            .HasDisplayName("Employee")
-            .HasPluralName("Employees");
+            .HasOne(x => x.Department)
+            .WithForeignKey(x => x.DepartmentId)
+            .WithInverse(x => x.Department.Employees)
+            .HasDisplayName("The department of the employee"); 
 
         ForProperty(x => x.Name)
             .HasDisplayName("The name of the employee 1").HasFieldType("string")
-            .HasMinLength(12)
-            .HasMaxLength(200)
+            .HasMinLength(11)
+            .HasMaxLength(110)
             .HasPlaceholder("Enter employee name placeholder")
             .IsRequired()
             .ShowInList()

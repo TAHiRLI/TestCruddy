@@ -1,7 +1,6 @@
+using System.Text.Json.Serialization;
 using Cruddy.Core.Extensions;
 using Cruddy.Core.Interfaces;
-using CruddyTest.Api.Dtos;
-using CruddyTest.Core.Cruddy;
 using CruddyTest.Core.Entities;
 using CruddyTest.Dtos;
 
@@ -11,6 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
 builder.Services.AddCruddy(options =>
 {
     options.ScanAssembly(typeof(Employee).Assembly);
@@ -40,14 +43,7 @@ app.MapGet("/api/metadata", (IEntityMetadataProvider provider) =>
     {
         Name = m.Name,
         ClrType = m.ClrType.FullName ?? m.ClrType.Name,
-        Relations = m.Relationships.Select(r => new RelationMetadataDto()
-        {
-            Name = r.Name,
-            TargetEntity = r.TargetEntity,
-            ForeignKey = r.ForeignKey,
-            IsRequired = r.IsRequired,
-            Type = r.Type.ToString()
-        }),
+        Relations = m.Relationships.ToList(),
         Properties = m.Properties.Select(p => new PropertyMetadataDto
         {
             Name = p.Name,

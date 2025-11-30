@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CruddyTest.Api.Dtos;
+using Cruddy.Core.Models;
 
 namespace CruddyTest.Dtos
 {
@@ -11,7 +11,7 @@ namespace CruddyTest.Dtos
         public string Name { get; set; } = "";
         public string ClrType { get; set; } = "";
         public IEnumerable<PropertyMetadataDto> Properties { get; set; } = new List<PropertyMetadataDto>();
-        public IEnumerable<RelationMetadataDto> Relations { get; set; } = new List<RelationMetadataDto>();
+        public IEnumerable<RelationshipMetadata> Relations { get; set; } = new List<RelationshipMetadata>();
 
 
     }

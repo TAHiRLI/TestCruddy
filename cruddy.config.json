@@ -1,0 +1,15 @@
+{
+  "backend": {
+    "path": "./CruddyTest/CruddyTest.Api"
+  },
+  "frontend": {
+    "path": "./client/src",
+    "outputDir": "./client/src/components",
+    "baseUrl": "/api"
+  },
+  "generate": {
+    "extension": ".cruddy.tsx",
+    "templatePath": "./.cruddy/templates/react-ts/"
+  },
+  "customized": []
+}

@@ -3,7 +3,7 @@
   "isRoot": true,
   "tools": {
     "cruddy.cli": {
-      "version": "0.1.2",
+      "version": "0.1.43",
       "commands": [
         "cruddy"
       ],

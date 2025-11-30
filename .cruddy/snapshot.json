@@ -1,0 +1,105 @@
+{
+  "version": "1.0.0",
+  "appliedMigrations": [],
+  "entities": [
+    {
+      "name": "Employee",
+      "clrType": "CruddyTest.Core.Entities.Employee",
+      "displayName": "Employee",
+      "pluralName": "Employees",
+      "description": "",
+      "icon": "",
+      "properties": [
+        {
+          "name": "Name",
+          "clrType": "System.String",
+          "displayName": "The name of the employee 1",
+          "placeholder": "Enter employee name placeholder",
+          "helpText": "",
+          "isRequired": true,
+          "requiredMessage": "This is a custom required filed",
+          "maxLength": 110,
+          "minLength": 11,
+          "showInList": true,
+          "showInForm": true,
+          "isReadOnly": false,
+          "isHidden": false,
+          "fieldType": "string",
+          "format": ""
+        },
+        {
+          "name": "Email",
+          "clrType": "System.String",
+          "displayName": "Email",
+          "placeholder": "",
+          "helpText": "",
+          "isRequired": true,
+          "maxLength": 255,
+          "showInList": false,
+          "showInForm": false,
+          "isReadOnly": false,
+          "isHidden": false,
+          "fieldType": "email",
+          "format": ""
+        },
+        {
+          "name": "Age",
+          "clrType": "System.Int32",
+          "displayName": "Age",
+          "placeholder": "",
+          "helpText": "",
+          "isRequired": false,
+          "showInList": false,
+          "showInForm": false,
+          "isReadOnly": false,
+          "isHidden": false,
+          "fieldType": "text",
+          "format": ""
+        },
+        {
+          "name": "DepartmentId",
+          "clrType": "System.Int32",
+          "displayName": "DepartmentId",
+          "placeholder": "",
+          "helpText": "",
+          "isRequired": false,
+          "showInList": false,
+          "showInForm": false,
+          "isReadOnly": false,
+          "isHidden": false,
+          "fieldType": "text",
+          "format": ""
+        },
+        {
+          "name": "Department",
+          "clrType": "CruddyTest.Core.Entities.Department",
+          "displayName": "Department",
+          "placeholder": "",
+          "helpText": "",
+          "isRequired": false,
+          "showInList": false,
+          "showInForm": false,
+          "isReadOnly": false,
+          "isHidden": false,
+          "fieldType": "text",
+          "format": ""
+        }
+      ],
+      "relationships": [
+        {
+          "name": "Department",
+          "displayName": "The department of the employee",
+          "targetEntity": "Department",
+          "foreignKey": "DepartmentId",
+          "inverseProperty": "Employees",
+          "isRequired": false,
+          "type": 2,
+          "showInList": false,
+          "showInForm": false,
+          "isHidden": false
+        }
+      ],
+      "ignoredProperties": []
+    }
+  ]
+}
